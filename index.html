@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Solution-1</title>
+  <style>
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      font-family: Verdana, Helvetica, sans-serif;
+    }
+    
+    p.L{font-size: 40px; font-weight: bold; }
+    input.pass { border-color: black; }
+    input.pass { border-color: green; }
+    input.fail { border-color: red; }
+    input#box{
+         width: 100%;
+         padding: 12px 20px;
+         margin: 8px 0;
+         display: inline-block;
+         border-radius: 4px;
+         box-sizing: border-box; }
+    p.pass { color: green; border-color: green; }
+    p.fail { color: red; border-color: red; }
+    p#b { font-style: italic; font-size: 15px; }
+  </style>
+<body>
+  <div class="container" ng-controller="LunchCheckController">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="L">Lunch Time</p>
+        <p>
+          <p id="b" ng-class="{pass: result, fail: !result}">{{resultString}}</p>
+        </p>
+        <p>
+          <input id="box" type="text"  placeholder="Enter your lunch items" ng-model="lunchItem" ng-class="{pass: result, fail: result == false}">
+          <button ng-click="checkItems();"  class="btn btn-default">Check if too much</button>
+        </p>        
+      </div>
+    </div>
+      </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
